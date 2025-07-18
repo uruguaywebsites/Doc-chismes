@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chisme Bonito – El Documental</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e10;
+      color: #ffffff;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      text-align: center;
+      color: #bbbbbb;
+      margin-bottom: 60px;
+    }
+
+    .section {
+      background-color: #1a1a1d;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+    }
+
+    .section h3 {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      color: #f5aaff;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #dddddd;
+    }
+
+    .rules-list {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    .rules-list li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .creditos {
+      text-align: center;
+      color: #aaaaaa;
+      font-size: 0.95rem;
+      margin-top: 80px;
+    }
+
+    .highlight {
+      color: #ff94ff;
+      font-weight: bold;
+    }
+
+    /* Responsivo para celular */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+      }
+
+      .section {
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .section h3 {
+        font-size: 1.1rem;
+      }
+
+      .section p, .rules-list li {
+        font-size: 0.95rem;
+      }
+
+      .creditos {
+        font-size: 0.85rem;
+        margin-top: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <div class="container">
+    <h1>Chisme Bonito</h1>
+    <h2>Detrás del grupito más ordenado del caos digital</h2>
+
+    <div class="section">
+      <h3>Introducción</h3>
+      <p>
+        En el corazón de los grupos digitales, donde reina el desorden y la sobreinformación, surgió algo distinto.
+        Una comunidad que no buscaba solo chismear, sino hacerlo con estructura, estilo y una pizca de elegancia.
+        Esta es la historia de "Click Aquí", un grupo creado por <span class="highlight">Axell</span> para quienes disfrutan el arte del cotilleo con criterio.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>¿Qué es "Click Aquí"?</h3>
+      <p>
+        "Click Aquí" es más que un grupo. Es un microcosmos social donde los rumores, las confesiones y los descubrimientos circulan bajo reglas estrictas.
+        Un entorno controlado donde el caos se convierte en narrativa, y donde cada integrante entiende que hay una forma correcta de contar lo incorrecto.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Reglamento del grupo</h3>
+      <p>
+        El grupo fue fundado con una estructura clara. Estas normas no son una sugerencia: son el marco que permite que el chisme fluya sin convertirse en una tormenta.
+      </p>
+      <ul class="rules-list">
+        <li>Hablar sin insultar ni provocar conflictos innecesarios.</li>
+        <li>No repetir información constantemente o generar spam.</li>
+        <li>Si se comparte información delicada, debe venir acompañada de pruebas o ser desestimada.</li>
+        <li>Se permite el uso de imágenes o mensajes de voz, pero se prohíbe el envío excesivo de contenido audiovisual.</li>
+        <li>Está estrictamente prohibido meterse con familias, religión o temas personales sensibles.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Testimonios</h3>
+      <p>
+        A lo largo del tiempo, múltiples integrantes han dejado su marca en el grupo. Algunos lo hacen activamente, otros simplemente observan. Sin embargo, todos coinciden en una cosa: el ambiente se siente distinto.
+      </p>
+      <p>
+        “Yo solo vengo a leer, pero si supieran lo que sé…”<br>
+        “Una vez tiraron una bomba tan fuerte que el grupo quedó en silencio durante tres días.”<br>
+        “Acá se chismea con estilo, y eso no lo tiene cualquier grupo.”
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Una visión de Axell</h3>
+      <p>
+        <span class="highlight">Axell</span>, fundador y administrador del grupo, resume la filosofía del grupo de forma directa:
+        “No nos hacemos cargo del mal uso del grupo. Creamos un espacio donde hablar sin destruir, donde compartir sin invadir, y donde el cotilleo encuentra su lugar justo.”
+      </p>
+    </div>
+
+    <div class="creditos">
+      Página diseñada en homenaje a los buenos chismes. Producción original por <span class="highlight">Axell</span>.
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    const particles = Array.from({length: 120}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.8 + 0.5,
+      dx: (Math.random() - 0.5) * 0.25,
+      dy: (Math.random() - 0.5) * 0.25
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#ffffff";
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
